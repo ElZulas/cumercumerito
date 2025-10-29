@@ -37,8 +37,9 @@ class TasksRemoteDataSource {
       final Response<dynamic> response = await _dioClient.get('/posts');
       final data = response.data as List<dynamic>;
       return data
-          .map((dynamic json) =>
-              TaskModel.fromJson(json as Map<String, dynamic>))
+          .map(
+            (dynamic json) => TaskModel.fromJson(json as Map<String, dynamic>),
+          )
           .toList();
     } on DioException catch (e) {
       throw NetworkException.fromDioError(e);

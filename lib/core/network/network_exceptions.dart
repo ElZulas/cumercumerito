@@ -14,7 +14,9 @@ class NetworkException implements Exception {
           'Connection timed out. Check your internet connection.',
         );
       case DioExceptionType.badResponse:
-        return NetworkException._handleStatusCode(dioError.response?.statusCode);
+        return NetworkException._handleStatusCode(
+          dioError.response?.statusCode,
+        );
       case DioExceptionType.cancel:
         return NetworkException('Request was cancelled');
       case DioExceptionType.connectionError:
@@ -44,5 +46,3 @@ class NetworkException implements Exception {
   @override
   String toString() => message;
 }
-
-

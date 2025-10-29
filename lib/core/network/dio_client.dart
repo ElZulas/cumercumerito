@@ -35,7 +35,9 @@ class DioClient {
       },
       onError: (DioException error, handler) {
         // ignore: avoid_print
-        print('❌ ERROR[${error.response?.statusCode}] => MESSAGE: ${error.message}');
+        print(
+          '❌ ERROR[${error.response?.statusCode}] => MESSAGE: ${error.message}',
+        );
         return handler.next(error);
       },
     );
@@ -73,5 +75,3 @@ class DioClient {
     }
   }
 }
-
-

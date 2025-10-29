@@ -29,7 +29,9 @@ class _CreateTaskPageState extends ConsumerState<CreateTaskPage> {
     setState(() => _isLoading = true);
 
     try {
-      await ref.read(tasksProvider).createTask(
+      await ref
+          .read(tasksProvider)
+          .createTask(
             _titleController.text,
             _descriptionController.text,
           );
@@ -156,7 +158,9 @@ class _CreateTaskPageState extends ConsumerState<CreateTaskPage> {
                         width: 20,
                         child: CircularProgressIndicator(
                           strokeWidth: 2,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Colors.white,
+                          ),
                         ),
                       )
                     : const Text(
